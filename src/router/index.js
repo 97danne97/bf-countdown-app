@@ -1,25 +1,46 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Countdowns from '../views/Countdowns.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/countdowns/'
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/countdowns/',
+    name: 'Countdowns',
+    component: Countdowns
+  },
+  {
+    path: '/countdowns/:id/',
+    name: 'countdown',
+    component: () => import('../views/Countdown.vue')
+  },
+  {
+    path: '/requirements/',
+    name: 'Requirements',
+    component: () => import('../views/Requirements.vue')
+  },
+  {
+    path: '/credits/',
+    name: 'Credits',
+    component: () => import('../views/Credits.vue')
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(process.env.BASE_URL),
   routes
+})
+
+router.afterEach((to, from) => {
+  const toDepth = to.path.split('/').length
+  const fromDepth = from.path.split('/').length
+  if (toDepth === fromDepth) {
+    to.meta.transitionName = 'fade'
+  } else {
+    to.meta.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+  }
 })
 
 export default router
