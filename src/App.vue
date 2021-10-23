@@ -131,6 +131,7 @@ main {
 }
 main > div{
   width: 100%;
+  padding: 0 20px;
 }
 
 .fade-enter-active,

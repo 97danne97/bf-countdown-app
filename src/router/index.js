@@ -13,7 +13,7 @@ const routes = [
   },
   {
     path: '/countdowns/:id/',
-    name: 'countdown',
+    name: 'Countdown',
     component: () => import('../views/Countdown.vue')
   },
   {

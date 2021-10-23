@@ -7,23 +7,28 @@
             <span v-if="audioLoaded">{{countdown.name}}</span>
           </transition>
         </div>
+        <div class="countdown-btn" @click="showPlayer = !showPlayer">
+        <transition-group name="fade">
+          <i v-if="showPlayer" class="bi-x"></i>
+          <i v-else class="bi-music-note-beamed"></i>
+        </transition-group>
+      </div>
       </div>
     <div id="countdown-container">
       <transition name="slide-left">
       <div v-if="audioLoaded" id="countdown-card" :style="`animation-name: ${this.countdownAnimation};`">
         <span v-for="(time, index) in countdown.times" :key="index">{{time}}
+          <transition name="fade">
           <span v-show="index + 1 < countdown.times.length"> : </span>
+          </transition>
         </span>
       </div>
       </transition>
     </div>
     <div id="player-container">
  <!-- <AudioPlayer id="bgMusic" ref="audioplayer" @loaded="this.audioLoaded = true" :isActive="this.isActive" :mood="this.countdown.mood"></AudioPlayer> -->
-      <div class="countdown-btn" v-if="showPlayer" @click="showPlayer = !showPlayer">
-        <i v-show="showPlayer" class="bi-x"></i>
-      </div>
       <transition name="fade">
-        <div id="ytplayer-container" v-show="false" :class="{visible: showPlayer&&audioLoaded}">
+        <div id="ytplayer-container" v-show="showPlayer&&audioLoaded">
           <YoutubePlayer id="ytplayer" @loaded="this.audioLoaded = true" :countdown="this.countdown">
           </YoutubePlayer>
         </div>
@@ -38,6 +43,7 @@ import AudioPlayer from '@/components/AudioPlayer'
 export default {
   // eslint-disable-next-line vue/no-unused-components
   components: { AudioPlayer, YoutubePlayer },
+  name: 'Countdown',
   data () {
     return {
       showPlayer: false,
@@ -80,14 +86,14 @@ export default {
   flex-flow: column;
   justify-content: center;
   height: calc(100vh - 60px);
-  position: absolute;
-  width: 100%;
+  overflow: hidden;
 }
 
 #countdown-nav {
   display: flex;
   position: absolute;
-  top: 0;
+  top: 0;left: 0;
+  justify-content: space-between;
   width: 100%;
   height: 60px;
   align-items: center;
@@ -114,7 +120,7 @@ export default {
 }
 
 #countdown-nav > .countdown-btn {
-  position: absolute;
+  position: relative;
 }
 
 #countdown-container {
@@ -124,6 +130,7 @@ export default {
 }
 
 #countdown-card {
+  animation-direction: forwards;
   animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation-iteration-count: infinite;
 }
@@ -137,42 +144,24 @@ export default {
 #player-container{
   display: flex;
   position: absolute;
-  justify-content: right;
-  align-items: center;
+  justify-content: center;
   width: 100%;
-  bottom: 0;
+  bottom: 20px;left: 0;
   overflow: hidden;
-  padding: 0 15px 15px;
 }
 
 #ytplayer-container {
   position: relative;
-  transition: .3s cubic-bezier(0.375, 0.82, 0.165, 1);
-  height: 60px;width: 60px;
+  transform: none;
   transform-origin: bottom right;
-  margin: 0 15px;
-  border-radius: 50%;
-  overflow: hidden;
+  transition: .3s cubic-bezier(0.575, 0.82, 0.165, 1);
+  height: 144px; width: 250px;
+  max-width: 100%;
 }
 
 #ytplayer-container.visible {
-  border-radius: 0px;
-  height: 144px; width: 250px;
-  transition: .3s cubic-bezier(0.375, 0.82, 0.165, 1);
-}
-
-#ytplayer-container::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.11);
-}
-
-#ytplayer-container.visible::before {
-  transform: scale(0);
+  transform: none;
+  opacity: 1;
 }
 
 #ytplayer {

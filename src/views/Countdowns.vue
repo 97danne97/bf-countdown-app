@@ -25,7 +25,9 @@ export default {
 <style scoped>
 .countdowns {
   display: flex;
+  margin-top: 20px;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
   align-content: flex-start;
 }

@@ -33,7 +33,8 @@ export default {
 }
 
 .event:hover {
-  color: #26FFD6;
+  background-color: #26FFD6;
+  color: #011c26;
 }
 
 .event h1 {
