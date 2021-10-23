@@ -24,6 +24,7 @@ export default {
 </script>
 <style scoped>
 .countdowns {
+  user-select: none;
   display: flex;
   margin-top: 20px;
   flex-wrap: wrap;
