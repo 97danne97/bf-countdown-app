@@ -1,72 +1,54 @@
 <template>
-  <iframe id="player"
-      src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
-      frameborder="0"
+  <iframe id="ytplayer"
+    src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&controls=0"
+    frameborder="0"
 ></iframe>
 </template>
 
 <script>
-import YouTube from 'vue3-youtube'
-
 export default {
   props: ['countdown'],
-  components: {
-    YouTube
-  },
   data () {
     return {
-      loaded: false,
       player: null,
-      currentBPM: 1,
-      songList: [
-        // Fan-made
-        /* { id: 'v1qF1nruSuQ', bpm: 110 },
-        { id: '8HNDCX_DM9Q', bpm: 85 },
-        { id: '-rrA5_6YZDg', bpm: 70 },
-        { id: 'NPJrfwBB_Og', bpm: 95 },
-        { id: 'sSbWOEa9Ogs', bpm: 50 }, */
-        // Official
-        { id: 'FytcxmBT9Ls', bpm: 119 },
-        { id: 'qGChJXejJtA', bpm: 75 },
-        { id: 'iXix8oK33yc', bpm: 90 },
-        { id: 'VWTJ5-hEPJM', bpm: 95 },
-        { id: '-uEc8_dcYUc', bpm: 118 },
-        { id: 'dgwNvhHJRrg', bpm: 114 },
-        { id: 'WC1DLT1s_hw', bpm: 139 },
-        { id: 'pN3BYTv5YLA', bpm: 127 }
-      ]
+      loaded: false,
+      currentBPM: 1
     }
   },
   computed: {
     savedMood () {
       return this.countdown.mood
+    },
+    soundtracks () {
+      return this.$store.state.soundtracks
     }
   },
   methods: {
     nextTrack () {
-      const index = Math.floor(Math.random() * this.songList.length)
+      const index = Math.floor(Math.random() * this.soundtracks.official.length)
       this.player.pauseVideo()
-      this.player.loadVideoById(this.songList[index].id)
+      this.player.loadVideoById(this.soundtracks.official[index].youtubeId)
       this.player.playVideo()
-      console.log(this.songList[index].id)
-      this.currentBPM = this.songList[index].bpm
+      console.log(`Playing: ${this.soundtracks.official[index].youtubeId}`)
+      this.currentBPM = this.soundtracks.official[index].bpm
     },
     createYouTubeIframe () {
       var tag = document.createElement('script')
       tag.src = 'https://www.youtube.com/iframe_api'
       tag.id = 'ytscript'
-      var firstScriptTag = document.getElementsByTagName('script')[0]
+      var firstScriptTag = document.getElementsByTagName('script')[document.getElementsByTagName('script').length - 1]
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
       window.onYouTubeIframeAPIReady = () => {
         console.log('onYouTubeIframeAPIReady')
         this.initYoutube()
-        this.$store.state.youtubeiframeready = true
       }
     },
     initYoutube () {
       const _ = this
       console.log('initYoutube')
-      this.player = new YT.Player('player', {
+      // eslint-disable-next-line no-undef
+      this.player = new YT.Player('ytplayer', {
+        playerVars: { autoplay: 1, controls: 0 },
         events: {
           onReady: _.onPlayerReady,
           onStateChange: _.onPlayerStateChange
@@ -94,21 +76,23 @@ export default {
       }
     }
   },
+  beforeUnmount () {
+    if (document.getElementById('ytscript')) {
+      document.getElementById('ytscript').remove()
+    }
+    if (document.getElementById('www-widgetapi-script')) {
+      document.getElementById('www-widgetapi-script').remove()
+    }
+    this.player.destroy()
+    document.querySelector('html').dispatchEvent(new CustomEvent('YouTubeIframeAPIReady'))
+    window.YT = undefined
+    window.YTConfig = undefined
+    window.onYouTubeIframeAPIReady = undefined
+    console.log('destroyed player')
+  },
   created () {
     console.log('created')
-    console.log(this.$store.state.youtubeiframeready)
-    if (!this.$store.state.youtubeiframeready) {
-      this.createYouTubeIframe()
-    } else {
-      this.nextTrack()
-    }
+    this.createYouTubeIframe()
   }
 }
 </script>
-
-<style>
-iframe{
-  width: 100%;
-  height: 100%;
-}
-</style>

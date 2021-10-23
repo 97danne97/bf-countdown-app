@@ -1,12 +1,82 @@
-[
-  {
-    "id": 0,
-    "name": "Early Access",
-    "date": "Nov 12, 2021 09:00:00 GMT+2"
-  },
-  {
-    "id": 1,
-    "name": "Release",
-    "date": "Nov 19, 2021 09:00:00 GMT+2"
-  }
-]
+{
+  "fanmade": [{
+      "name": "Battlefield 2042 Main Theme OST",
+      "bpm": 75,
+      "mood": "calm"
+    },
+    {
+      "name": "Battlefield 2042 Solomon's Theme Remix",
+      "bpm": 50,
+      "mood": "calm"
+    },
+    {
+      "name": "\"The Non-Patriated\" Theme (Extended)",
+      "bpm": 110,
+      "mood": "calm"
+    },
+    {
+      "name": "Kaleidoscope Theme (Golmud Railway Theme 2042 Remix)",
+      "bpm": 70,
+      "mood": "hype"
+    },
+    {
+      "name": "Hourglass Theme OST",
+      "bpm": 95,
+      "mood": "hype"
+    },
+    {
+      "name": "Orbital Theme OST",
+      "bpm": 60,
+      "mood": "hype"
+    },
+    {
+      "name": "Portal Theme OST",
+      "bpm": 85,
+      "mood": "hype"
+    },
+    {
+      "name": "Battlefield 2042 Main Theme OST",
+      "bpm": 86,
+      "mood": "launch"
+    },
+    {
+      "youtubeId": "EErJf4NAc-k",
+      "name": "Battlefield 2042 Unofficial Theme",
+      "bpm": 60,
+      "mood": "released"
+    }
+  ],
+  "official": [{
+      "youtubeId": "FytcxmBT9Ls",
+      "bpm": 119
+    },
+    {
+      "youtubeId": "qGChJXejJtA",
+      "bpm": 75
+    },
+    {
+      "youtubeId": "iXix8oK33yc",
+      "bpm": 90
+    },
+    {
+      "youtubeId": "VWTJ5-hEPJM",
+      "bpm": 95
+    },
+    {
+      "youtubeId": "-uEc8_dcYUc",
+      "bpm": 118
+    },
+    {
+      "youtubeId": "dgwNvhHJRrg",
+      "bpm": 114
+    },
+    {
+      "youtubeId": "WC1DLT1s_hw",
+      "bpm": 139
+    },
+    {
+      "youtubeId": "pN3BYTv5YLA",
+      "bpm": 127
+    }
+  ]
+}

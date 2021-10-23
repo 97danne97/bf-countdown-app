@@ -1,27 +1,22 @@
 <template>
-  <div @click="$router.push(`/countdowns/${event.id}`)" class="event">
-    <h1>{{event.name}}</h1>
-    <div class="countdown" v-if="event.times">
-      <span v-for="(time, index) in event.times" :key="index">
-        <span class="countdown-time-unit">
-          {{time}}
-          <span class="countdown-time-unit-separator" v-if="index + 1 < event.times.length"> : </span>
+  <transition name="fade" v-if="event.times">
+    <div @click="$router.push(`/countdowns/${event.id}`)" class="event">
+      <h1>{{event.name}}</h1>
+      <div class="countdown">
+        <span v-for="(time, index) in event.times" :key="index">
+          <span class="countdown-time-unit">
+            {{time}}
+            <span class="countdown-time-unit-separator" v-if="index + 1 < event.times.length"> : </span>
+          </span>
         </span>
-      </span>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
 export default {
-  props: ['event'],
-  data () {
-    return {
-      e: this.event
-    }
-  },
-  created: function () {
-  }
+  props: ['event']
 }
 </script>
 

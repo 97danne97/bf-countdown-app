@@ -3,16 +3,13 @@
   <main>
     <router-view v-slot="{ Component, route }" el="div">
       <transition :name="route.meta.transitionName">
-        <keep-alive>
         <component :is="Component" />
-        </keep-alive>
       </transition>
     </router-view>
   </main>
 </template>
 <script>
 import events from '@/json/events.json'
-import soundtracks from '@/json/soundtracks.json'
 
 import Nav from '@/components/AppSkeleton/Nav'
 
@@ -65,9 +62,8 @@ export default {
   },
   created () {
     this.$store.state.events = events
-    this.$store.state.soundtracks = soundtracks
     this.$store.state.events.forEach(event => {
-      event.interval = setInterval(() => this.countDown(event), 500)
+      event.interval = setInterval(() => this.countDown(event), 1000)
     })
   }
 }
@@ -116,8 +112,6 @@ hr{
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
   background: url('assets/images/bg.jpg');
   background-attachment: fixed;
 }
@@ -126,31 +120,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
-  height: 100vh;
 }
 
 main {
+  height: calc(100vh - 60px);
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  position: relative;
+  margin-top: 60px;
 }
 main > div{
   width: 100%;
-  min-height: calc(100vh - 60px);
-  padding: 0 15px;
-  margin-top: 60px;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .2s ease, transform .2s ease;
-}
-
-.fade-enter-active {
-  transition-delay: .1s;
+  transition: opacity .3s ease, transform .3s ease;
 }
 
 .fade-enter-from {
-  transform: translateY(-20px);
   opacity: 0;
   position: absolute;
 }
@@ -189,7 +177,9 @@ main > div{
     transform: translateY(100%);
   }
   100% {
-
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
 }
 @keyframes fade-out{

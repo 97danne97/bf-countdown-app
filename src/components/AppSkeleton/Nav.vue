@@ -34,6 +34,11 @@ export default {
     toggleExtended () {
       this.extended = !this.extended
     }
+  },
+  watch: {
+    $route () {
+      this.extended = false
+    }
   }
 }
 </script>
@@ -41,7 +46,8 @@ export default {
 <style scoped>
 nav {
   position: fixed;
-  width: 100%;
+  width: 100vw;
+  top: 0;
   z-index: 2;
   user-select: none;
 }
@@ -100,7 +106,7 @@ nav #nav-extended #link-group{
 nav a {
   font-weight: bold;
   text-decoration: none;
-  color: #2c2c2c;
+  color: #bbbbbb;
   padding: 10px 7px;
   font-size: 30px;
   line-height: 30px;

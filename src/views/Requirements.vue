@@ -56,7 +56,6 @@ export default {
 <style scoped>
   .requirements{
     display: flex;
-    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;

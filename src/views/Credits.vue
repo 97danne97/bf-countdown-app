@@ -1,19 +1,21 @@
 <template>
     <div class="credits">
-      <div class="credits-container">
+      <article class="credits-container">
         <section class="credits-section" v-for="(credit, key) in credits" :key="key">
           <h1>{{key.toUpperCase()}}</h1>
           <hr>
           <div class="credit-box" v-for="(artist, index) in credit" :key="index">
-            <h2>{{artist.name}}</h2>
+            <h1>{{artist.name}}</h1>
             <ul>
               <li v-for="(song, index) in artist.songs" :key=index>
-                <a target="_blank" :href="`https://www.youtube.com/watch?v=${song.youtubeID}`">{{song.title}}</a>
+                <a target="_blank" :href="`https://www.youtube.com/watch?v=${song.youtubeID}`">
+                  <i class="bi-youtube"></i>{{song.title}}
+                </a>
               </li>
             </ul>
           </div>
         </section>
-      </div>
+      </article>
     </div>
 </template>
 
@@ -58,26 +60,24 @@ a:hover {
   flex-direction: column;
   align-items: center;
 }
-
 .credits-container {
   display: flex;
   justify-content: center;
   gap: 50px;
 }
-
 .credit-section {
   display: flex;
   gap: 20px;
 }
-
 .credit-box {
   padding: 10px 0;
 }
-
 .credit-box ul > li {
   font-family: EABFFont;
   margin: 8px 0;
-  list-style-type: '>  ';
-  color: #26ffdf;
+  list-style-type: none;
+}
+i {
+  margin-right: 10px;
 }
 </style>

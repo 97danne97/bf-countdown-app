@@ -1,7 +1,7 @@
 <template>
   <table class="requirements-card">
     <tr>
-      <thead>{{requirements.type}}</thead>
+      <h1>{{requirements.type}}</h1>
     </tr>
     <tr v-for="(val, key, index) in requirements.requirements" :key="key" :style="'animation-delay:'+ index/50+'s'">
       <td>{{ key }}</td><td>{{ val }}</td>

@@ -1,10 +1,10 @@
 import { createStore } from 'vuex'
+import soundtracks from '@/json/soundtracks.json'
 
 export default createStore({
   state: {
-    soundtracks: [],
-    events: [],
-    youtubeiframeready: false
+    soundtracks: soundtracks,
+    events: []
   },
   getters: {
     getSoundTrackByMood: (state) => (mood) => {
