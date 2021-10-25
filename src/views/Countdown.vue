@@ -68,12 +68,7 @@ export default {
       }
       return animation
     },
-    countdown () {
-      return this.$store.getters.getEventById(this.$route.params.id)
-    }
-  },
-  created () {
-    console.log(this.$store.getters.getEventById(this.$route.params.id))
+    countdown () { return this.$store.getters.getEventById(this.$route.params.id) }
   }
 }
 </script>
