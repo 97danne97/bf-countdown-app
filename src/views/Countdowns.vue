@@ -3,7 +3,6 @@
     <CountdownItem
       v-for="(event, index) in events"
       :key="index"
-      :style="`animation-delay:${index/30}s`"
       :event="event"
     >
     </CountdownItem>
@@ -26,9 +25,8 @@ export default {
 .countdowns {
   user-select: none;
   display: flex;
-  margin-top: 20px;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   align-content: flex-start;
 }
