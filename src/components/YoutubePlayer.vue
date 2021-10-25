@@ -1,6 +1,6 @@
 <template>
   <iframe id="ytplayer"
-  src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&controls=0&autoplay=1&loop=1"
+  src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&controls=1&autoplay=1&loop=1&color=white"
   frameborder="0"
 ></iframe>
 </template>
