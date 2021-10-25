@@ -9,8 +9,6 @@
   </main>
 </template>
 <script>
-import events from '@/json/events.json'
-
 import Nav from '@/components/AppSkeleton/Nav'
 
 export default {
@@ -61,7 +59,6 @@ export default {
     }
   },
   created () {
-    this.$store.state.events = events
     this.$store.state.events.forEach(event => {
       event.interval = setInterval(() => this.countDown(event), 1000)
     })

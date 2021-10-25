@@ -1,10 +1,11 @@
 import { createStore } from 'vuex'
+import events from '@/json/events.json'
 import soundtracks from '@/json/soundtracks.json'
 
 export default createStore({
   state: {
     soundtracks: soundtracks,
-    events: []
+    events: events
   },
   getters: {
     getSoundTrackByMood: (state) => (mood) => {
