@@ -86,11 +86,6 @@ export default {
   backdrop-filter: blur(25px);
 }
 
-hr{
-  border-color: #26ffdf;
-  padding: 0;margin: 0;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -100,7 +95,13 @@ body {
   padding: 0;
   background: url('assets/images/bg.jpg');
   background-attachment: fixed;
+  overflow-x: hidden;
 }
+
+hr{
+  border-color: #26ffdf;
+}
+
 #app {
   font-family: BFModernista;
   -webkit-font-smoothing: antialiased;
@@ -109,13 +110,15 @@ body {
 }
 
 main {
-  height: calc(100vh - 60px);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   position: relative;
   margin-top: 60px;
+  width: 100vw;
 }
+
 main > div{
+  min-height: calc(100vh - 60px);
   width: 100%;
   padding: 20px;
 }

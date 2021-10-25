@@ -1,6 +1,6 @@
 <template>
-  <transition name="fade" v-if="event.times">
-    <div @click="$router.push(`/countdowns/${event.id}`)" class="event">
+  <transition name="fade">
+    <div @click="$router.push(`/countdowns/${event.id}`)" class="event" v-if="event.times">
       <h1>{{event.name}}</h1>
       <div class="countdown">
         <span v-for="(time, index) in event.times" :key="index">
@@ -25,10 +25,8 @@ export default {
 .event {
   cursor: pointer;
   padding: 0 20px;
-  opacity: 0;
   border: 2px solid transparent;
   text-align: center;
-  animation: forwards .5s fade-slide-in cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: .2s ease;
 }
 

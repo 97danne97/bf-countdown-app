@@ -1,17 +1,17 @@
 <template>
   <nav :class="{ extended: extended }">
     <header class="bg-dark bg-blur">
-      <img src="@/assets/images/bf-2042-teal-nav-logo.svg">
       <div class="nav-toggle" @click="extended = !extended">
         <transition name=fade>
           <i v-if="!extended" class="bi-list"></i>
           <i v-else class="bi-x"></i>
         </transition>
       </div>
+      <img src="@/assets/images/bf-2042-teal-nav-logo.svg" alt="logo">
     </header>
     <div id="nav-extended" class="bg-dark bg-blur">
       <div id="link-group">
-      <router-link v-for="route in routes" :key="route.name" @click="toggleExtended" :to="`/${route.route}`">{{route.name}}</router-link>
+        <router-link v-for="route in routes" :key="route.name" @click="toggleExtended" :to="`/${route.route}`">{{route.name}}</router-link>
       </div>
     </div>
   </nav>
@@ -53,9 +53,8 @@ nav header {
 
 nav .nav-toggle {
   position: absolute;
-  left: 0;
-  top: 0;
-  height: 60px;
+  left: 0;top: 0;
+  height: 100%;
   text-align: center;
   width: 60px;
   line-height: 60px;
@@ -72,7 +71,6 @@ nav #nav-extended {
   position: absolute;
   visibility: hidden;
   transform: translateY(100%);
-  transform-origin: top;
   transition: .3s cubic-bezier(0.89, 0.375, 0.365, 1);
   width: 100%;
   z-index: -1;
@@ -95,7 +93,7 @@ nav #nav-extended #link-group{
   height: calc(100vh);
 }
 
-nav a {
+nav #nav-extended #link-group a {
   font-weight: bold;
   text-decoration: none;
   color: #bbbbbb;
@@ -105,7 +103,9 @@ nav a {
   transition: color .2s;
 }
 
-nav a.router-link-exact-active, nav a:hover {
+nav #nav-extended #link-group a.router-link-exact-active,
+nav #nav-extended #link-group a:hover {
   color: #26FFD6;
+  text-shadow: 0 0 5px #26FFD6;
 }
 </style>

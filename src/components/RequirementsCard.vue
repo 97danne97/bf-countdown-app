@@ -1,12 +1,12 @@
 <template>
-  <table class="requirements-card">
-    <tr>
-      <h1>{{requirements.type}}</h1>
-    </tr>
-    <tr v-for="(val, key, index) in requirements.requirements" :key="key" :style="'animation-delay:'+ index/50+'s'">
-      <td>{{ key }}</td><td>{{ val }}</td>
-    </tr>
-  </table>
+  <div class="requirements-card">
+    <h2>{{requirements.type}}</h2>
+    <ul>
+      <li v-for="(val, key, index) in requirements.requirements" :key="key" :style="'animation-delay:'+ index/50+'s'">
+        <b>{{ key }}: </b><span>{{ val }}</span>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -18,24 +18,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-table {
-  max-width: 600px;
+.requirements-card > ul {
   font-family: Purista;
 }
 
-tr:not(:first-of-type) {
-  display: flex;
-  border-bottom: 1px solid #26FFD6;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fade-slide-in .3s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-td{
-  min-width: 200px;
-  width: 50%;
-  flex-grow: 1;
-  padding: 8px 10px;
+.requirements-card > ul > li {
   font-size: 18px;
-  flex-grow: 1;
+  color: #26FFD6;
+  font-family: EABFFont;
+  margin: 12px 0;
+}
+.requirements-card > ul > li > * {
+  color: white;
 }
 </style>
