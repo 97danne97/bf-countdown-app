@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'EABFFont';
+  src: url('../fonts/EABFFont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BFModernista';
+  src: url('../fonts/BF_Modernista-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Purista';
+  src: url('../fonts/Purista-Bold.woff2') format('woff2');
+}

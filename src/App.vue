@@ -66,6 +66,10 @@ export default {
 }
 </script>
 <style>
+/* Imports */
+@import url('assets/css/animations.css');
+@import url('assets/css/fonts.css');
+
 ::-webkit-scrollbar{
   display: block;
   width: 3px;
@@ -75,18 +79,6 @@ export default {
 
 ::-webkit-scrollbar-thumb{
   background-color: #26ffdf;
-}
-@font-face {
-  font-family: 'EABFFont';
-  src: url('assets/fonts/EABFFont.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'BFModernista';
-  src: url('assets/fonts/BF_Modernista-Bold.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Purista';
-  src: url('assets/fonts/Purista-Bold.woff2') format('woff2');
 }
 
 .bg-dark {
@@ -128,123 +120,6 @@ main {
 }
 main > div{
   width: 100%;
-  padding: 0 20px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .3s ease, transform .3s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-  position: absolute;
-}
-.fade-leave-to {
-  opacity: 0;
-  position: absolute;
-}
-
-.slide-left-enter-active,
-.slide-left-leave-active,
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: all 0.3s cubic-bezier(0.375, 0.885, 0.12, 1.0);
-}
-
-.slide-left-enter-from,
-.slide-right-leave-to {
-  opacity: 0;
-  transform: translate(30px, 0);
-  position: absolute;
-}
-
-.slide-left-leave-to,
-.slide-right-enter-from {
-  opacity: 0;
-  transform: translate(-30px, 0);
-  position: absolute;
-}
-
-/* Animations */
-
-@keyframes fade-in{
-  0% {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-}
-@keyframes fade-out{
-  0% {
-
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(100%);
-  }
-}
-@keyframes grow-in {
-  0% {
-    transform: scale(.95);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade-slide-in{
-  0% {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes shake-heavy {
-  0% { transform: translate(1px, 1px); }
-  10% { transform: translate(-1px, -2px); }
-  20% { transform: translate(-2px, 0px) rotate(1deg); }
-  30% { transform: translate(2px, 2px) rotate(0deg);}
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) scale(1.02); filter: blur(2px);}
-  60% { transform: translate(-2px, 1px); }
-  70% { transform: translate(2px, 1px); }
-  80% { transform: translate(-1px, -1px); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg) scale(1.02); }
-}
-@keyframes shake-medium {
-  0% { transform: translate(1px, 1px); }
-  10% { transform: translate(-1px, -2px); }
-  20% { transform: translate(-2px, 0px)}
-  30% { transform: translate(2px, 2px)}
-  40% { transform: translate(1px, -1px)}
-  50% { transform: translate(-1px, 2px); filter: blur(2px);}
-  60% { transform: translate(-2px, 1px); }
-  70% { transform: translate(2px, 1px); }
-  80% { transform: translate(-1px, -1px); }
-  90% { transform: translate(1px, 2px)}
-  100% { transform: translate(1px, -2px)}
-}
-@keyframes shake-light {
-  0% { transform: translate(1px, 1px); filter: blur(1px);}
-  10% { transform: translate(-0px, -1px); }
-  20% { transform: translate(-1px, 0px); filter: blur(1px);}
-  30% { transform: translate(0px, 1px); }
-  40% { transform: translate(1px, -1px)}
-  50% { transform: translate(-1px, 0px);}
-  60% { transform: translate(-1px, 1px); }
-  70% { transform: translate(0px, 1px);  filter: blur(1px);}
-  80% { transform: translate(-1px, -1px); }
-  90% { transform: translate(1px, 0px)}
-  100% { transform: translate(0px, -1px)}
+  padding: 20px;
 }
 </style>
