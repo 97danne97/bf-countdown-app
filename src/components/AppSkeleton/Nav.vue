@@ -30,16 +30,8 @@ export default {
       extended: false
     }
   },
-  methods: {
-    toggleExtended () {
-      this.extended = !this.extended
-    }
-  },
-  watch: {
-    $route () {
-      this.extended = false
-    }
-  }
+  methods: { toggleExtended () { this.extended = !this.extended } },
+  watch: { $route () { this.extended = false } }
 }
 </script>
 

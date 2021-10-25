@@ -22,35 +22,32 @@ export default {
       const distance = this.getTimeDifference(new Date(event.date).getTime())
       event.distance = distance
 
-      if (distance <= 81000) {
+      if (distance <= 60000)
         event.mood = 'released'
-      } else if (distance < 3600000) {
+      else if (distance < 3600000)
         event.mood = 'launch'
-      } else if (distance < 86400000) {
+      else if (distance < 86400000)
         event.mood = 'hype'
-      } else {
+      else
         event.mood = 'calm'
-      }
 
       // Time calculations for days, hours, minutes and seconds
-      var d = Math.floor(distance / (1000 * 60 * 60 * 24))
-      var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-      var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-      var s = Math.floor((distance % (1000 * 60)) / 1000)
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24))
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      const s = Math.floor((distance % (1000 * 60)) / 1000)
 
       if (distance <= 0) {
         event.times = [0, 0, 0, 0]
         clearInterval(event.interval)
-      } else {
+      } else
         event.times = [d, h, m, s]
-      }
 
       // Add zero to numbers below 10
       event.times.forEach((time, index) => {
         let t = time.toString()
-        if (t.length === 1) {
+        if (t.length === 1)
           t = '0'.concat(t)
-        }
         event.times[index] = t
       })
     },
