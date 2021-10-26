@@ -1,5 +1,5 @@
 <template>
-  <audio @ended="nextTrack()">
+  <audio @ended="nextTrack()" id="bgMusic">
     <source type="audio/mp3" />
     Your browser does not support the audio element.
   </audio>
