@@ -1,114 +1,124 @@
-{
-  "fanmade": [{
-      "youtubeId": "CIy3qJsOG5c",
-      "title": "Battlefield 2042 Main Theme OST",
-      "artists": ["Afroh Music"],
-      "bpm": 75,
-      "mood": "calm"
-    },
-    {
-      "youtubeId": "sSbWOEa9Ogs",
-      "title": "Battlefield 2042 Solomon's Theme Remix",
-      "artists": ["Afroh Music"],
-      "bpm": 50,
-      "mood": "calm",
-      "remix": true
-    },
-    {
-      "youtubeId": "v1qF1nruSuQ",
-      "title": "\"The Non-Patriated\" Theme (Extended)",
-      "artists": ["Afroh Music"],
-      "bpm": 110,
-      "mood": "calm"
-    },
-    {
-      "youtubeId": "-rrA5_6YZDg",
-      "title": "Kaleidoscope Theme (Golmud Railway Theme 2042 Remix)",
-      "artists": ["Afroh Music"],
-      "bpm": 70,
-      "mood": "hype",
-      "remix": true
-    },
-    {
-      "youtubeId": "NPJrfwBB_Og",
-      "title": "Hourglass Theme OST",
-      "artists": ["Afroh Music"],
-      "bpm": 95,
-      "mood": "hype"
-    },
-    {
-      "youtubeId": "naV3k0j2lhI",
-      "title": "Orbital Theme OST",
-      "artists": ["Afroh Music"],
-      "bpm": 60,
-      "mood": "hype"
-    },
-    {
-      "youtubeId": "8HNDCX_DM9Q",
-      "title": "Portal Theme OST",
-      "artists": ["Afroh Music"],
-      "bpm": 85,
-      "mood": "hype"
-    },
-    {
-      "youtubeId": "IbpZJvnM5RM",
-      "title": "Battlefield 2042 Main Theme OST",
-      "artists": ["Afroh Music"],
-      "bpm": 86,
-      "mood": "launch"
-    },
-    {
-      "youtubeId": "EErJf4NAc-k",
-      "title": "Battlefield 2042 Unofficial Theme",
-      "artist": "Vladislav Zharkov",
-      "bpm": 60,
-      "mood": "released",
-      "remix": true
-    },
-    {
-      "youtubeId": "Kf1BLHvwqrs",
-      "title": "Battlefield Theme - Epic Orchestral Cover",
-      "artist": "Kāru",
-      "bpm": 57,
-      "mood": "hype",
-      "remix": true
-    }
-  ],
-  "official": [{
-      "youtubeId": "FytcxmBT9Ls",
-      "title": "Battlefield 2042",
-      "artists": ["Hildur Guðnadóttir", "Sam Slater"],
-      "bpm": 119
-    },
-    {
-      "youtubeId": "qGChJXejJtA",
-      "title": "Run Baby Run",
-      "artists": ["2WEI", "Ali Christenhusz"],
-      "bpm": 75
-    },
-    {
-      "youtubeId": "iXix8oK33yc",
-      "title": "Kickstart my Heart",
-      "artist": ["2WEI", "Ali Christenhusz"],
-      "bpm": 90
-    },
-    {
-      "youtubeId": "VWTJ5-hEPJM",
-      "title": "War (Portal Official Trailer Song)",
-      "artists": ["IDLES"],
-      "bpm": 95
-    },
-    {
-      "youtubeId": "oGL0xmMBob4",
-      "title": "Battlefield 4 \"Warsaw\" Theme",
-      "artists": ["Rami"],
-      "bpm": 118
-    },
-    {
-      "youtubeId": "dgwNvhHJRrg",
-      "title": "Battlefield 3 Theme",
-      "artists": ["Johan Skugge", "Jukka Rintamäki"],
-      "bpm": 114
-    }
-  ]
-}
+[
+  {
+    "youtubeId": "CIy3qJsOG5c",
+    "title": "Battlefield 2042 Main Theme OST",
+    "artists": ["Afroh Music"],
+    "bpm": 75,
+    "official": false,
+    "mood": "calm"
+  },
+  {
+    "youtubeId": "sSbWOEa9Ogs",
+    "title": "Battlefield 2042 Solomon's Theme Remix",
+    "artists": ["Afroh Music"],
+    "bpm": 50,
+    "official": false,
+    "mood": "calm"
+  },
+  {
+    "youtubeId": "v1qF1nruSuQ",
+    "title": "\"The Non-Patriated\" Theme (Extended)",
+    "artists": ["Afroh Music"],
+    "bpm": 110,
+    "official": false,
+    "mood": "calm"
+  },
+  {
+    "youtubeId": "-rrA5_6YZDg",
+    "title": "Kaleidoscope Theme (Golmud Railway Theme 2042 Remix)",
+    "artists": ["Afroh Music"],
+    "bpm": 70,
+    "official": false,
+    "mood": "hype"
+  },
+  {
+    "youtubeId": "NPJrfwBB_Og",
+    "title": "Hourglass Theme OST",
+    "artists": ["Afroh Music"],
+    "bpm": 95,
+    "official": false,
+    "mood": "hype"
+  },
+  {
+    "youtubeId": "naV3k0j2lhI",
+    "title": "Orbital Theme OST",
+    "artists": ["Afroh Music"],
+    "bpm": 60,
+    "official": false,
+    "mood": "hype"
+  },
+  {
+    "youtubeId": "8HNDCX_DM9Q",
+    "title": "Portal Theme OST",
+    "artists": ["Afroh Music"],
+    "bpm": 85,
+    "official": false,
+    "mood": "hype"
+  },
+  {
+    "youtubeId": "IbpZJvnM5RM",
+    "title": "Battlefield 2042 Main Theme OST",
+    "artists": ["Afroh Music"],
+    "bpm": 86,
+    "official": false,
+    "mood": "launch"
+  },
+  {
+    "youtubeId": "EErJf4NAc-k",
+    "title": "Battlefield 2042 Unofficial Theme",
+    "artists": ["Vladislav Zharkov"],
+    "bpm": 60,
+    "official": false,
+    "mood": "released"
+  },
+  {
+    "youtubeId": "Kf1BLHvwqrs",
+    "title": "Battlefield Theme - Epic Orchestral Cover",
+    "artists": ["Kāru"],
+    "bpm": 57,
+    "official": false,
+    "mood": "hype"
+  },
+  {
+    "youtubeId": "FytcxmBT9Ls",
+    "title": "Battlefield 2042",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "qGChJXejJtA",
+    "title": "Run Baby Run",
+    "artists": ["2WEI", "Ali Christenhusz"],
+    "bpm": 75,
+    "official": true
+  },
+  {
+    "youtubeId": "iXix8oK33yc",
+    "title": "Kickstart my Heart",
+    "artists": ["2WEI", "Ali Christenhusz"],
+    "bpm": 90,
+    "official": true
+  },
+  {
+    "youtubeId": "VWTJ5-hEPJM",
+    "title": "War (Portal Official Trailer Song)",
+    "artists": ["IDLES"],
+    "bpm": 95,
+    "official": true
+  },
+  {
+    "youtubeId": "oGL0xmMBob4",
+    "title": "Battlefield 4 \"Warsaw\" Theme",
+    "artists": ["Rami"],
+    "bpm": 118,
+    "official": true
+  },
+  {
+    "youtubeId": "dgwNvhHJRrg",
+    "title": "Battlefield 3 Theme",
+    "artists": ["Johan Skugge", "Jukka Rintamäki"],
+    "bpm": 114,
+    "official": true
+  }
+]

@@ -21,16 +21,16 @@ export default {
       return this.countdown.mood
     },
     soundtracks () {
-      return this.$store.state.soundtracks
+      return this.$store.getters.getSoundtracks()
     }
   },
   methods: {
     nextTrack () {
-      const index = Math.floor(Math.random() * this.soundtracks.official.length)
-      this.player.loadVideoById(this.soundtracks.official[index].youtubeId)
+      const index = Math.floor(Math.random() * this.soundtracks.length)
+      this.player.loadVideoById(this.soundtracks[index].youtubeId)
       this.player.playVideo()
-      console.log(`Playing: ${this.soundtracks.official[index].youtubeId}`)
-      this.currentBPM = this.soundtracks.official[index].bpm
+      console.log(`Playing: ${this.soundtracks[index].youtubeId}`)
+      this.currentBPM = this.soundtracks[index].bpm
     },
     createYouTubeIframe () {
       var tag = document.createElement('script')
