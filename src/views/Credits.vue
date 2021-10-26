@@ -1,83 +1,83 @@
 <template>
     <div class="credits">
-      <article class="credits-container">
-        <section class="credits-section" v-for="(credit, key) in credits" :key="key">
-          <h1>{{key.toUpperCase()}}</h1>
-          <hr>
-          <div class="credit-box" v-for="(artist, index) in credit" :key="index">
-            <h1>{{artist.name}}</h1>
-            <ul>
-              <li v-for="(song, index) in artist.songs" :key=index>
-                <a target="_blank" :href="`https://www.youtube.com/watch?v=${song.youtubeID}`">
-                  <i class="bi-youtube"></i>{{song.title}}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </article>
+      <section class="credits-section">
+        <h1 class="jumbotron">Credits</h1>
+        <h2>Soundtracks</h2>
+        <hr>
+        <div class="credits-box">
+          <a class="credit"
+            v-for="(soundtrack, index) in this.$store.getters.getSoundtracks()"
+            :key="index"
+            target="_blank"
+            :href="`https://www.youtube.com/watch?v=${soundtrack.youtubeId}`">
+            <div class="left">
+              <div class="title-item">{{soundtrack.title}}
+                <!-- <span class="chip" v-if="soundtrack.official"> OST</span> -->
+              </div>
+              <div class="artist-item" v-for="(artist, index) in soundtrack.artists" :key="index">{{artist}}</div>
+            </div>
+            <div class="right">
+              <i class="yt-icon bi-youtube"></i>
+            </div>
+          </a>
+        </div>
+      </section>
     </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      credits: {
-        artists: [
-          {
-            name: 'Afroh Music',
-            songs: [
-              { title: '"The Non-Patriated" Theme (Extended)', youtubeID: 'v1qF1nruSuQ' },
-              { title: 'Portal Theme OST', youtubeID: '8HNDCX_DM9Q' },
-              { title: 'Kaleidoscope Theme (Golmud Railway Theme 2042 Remix)', youtubeID: '-rrA5_6YZDg' },
-              { title: 'Hourglass Theme OST', youtubeID: '-NPJrfwBB_Og' },
-              { title: 'Battlefield 2042 Solomon\'s Theme Remix', youtubeID: 'sSbWOEa9Ogs' },
-              { title: 'Orbital Theme OST', youtubeID: 'naV3k0j2lhI' },
-              { title: 'Battlefield 2042 Main Theme OST', youtubeID: 'CIy3qJsOG5c' },
-              { title: 'Battlefield 2042 Main Theme Full OST', youtubeID: 'IbpZJvnM5RM' }
-            ]
-          }
-        ]
-      }
-    }
-  }
-}
+export default { data () { return {} } }
 </script>
 
 <style scoped>
-a {
-  color: #ffffff;
-  transition: text-shadow .2s, color .2s;
-  text-decoration: none;
-}
-a:hover {
-  color: #26ffdf;
-  text-shadow: 0 0 7px #26ffdec5;
-}
 .credits {
+  width: 100%;
+}
+
+.credits-section {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.credits-box {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.credit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-family: EABFFont;
+  color: white;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.credit:hover {
+  color: #011c26;
+  background-color: #26ffdf;
+}
+
+.title-item {
+  font-size: 20px;
+  display: flex;
   align-items: center;
 }
-.credits-container {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
+
+.artist-item {
+  margin-top: 5px;
 }
-.credit-section {
-  display: flex;
-  gap: 20px;
+
+.left {
+  flex-grow: 1;
 }
-.credit-box {
-  padding: 10px 0;
-}
-.credit-box ul > li {
-  font-family: EABFFont;
-  margin: 8px 0;
-  list-style-type: none;
-}
-i {
-  margin-right: 10px;
+
+.yt-icon {
+  padding-left: 5px;
+  font-size: 25px;
+  position: relative;
 }
 </style>
