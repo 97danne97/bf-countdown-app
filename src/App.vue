@@ -74,21 +74,26 @@ export default {
   background-color: #011c26;
 }
 
-::-webkit-scrollbar-thumb{
-  background-color: #26ffdf;
+::-webkit-scrollbar-thumb{ background-color: #26ffdf; }
+
+.bg-dark { background-color: rgba(0, 0, 0, 0.486); }
+
+.bg-blur {  backdrop-filter: blur(25px); }
+
+.chip {
+  border-radius: 7px;
+  color: #011c26;
+  margin-left: 5px;
+  background-color: white;
+  font-size: 10px;
+  padding: 1px 5px;
 }
 
-.bg-dark {
-  background-color: rgba(0, 0, 0, 0.486);
-}
+h1.jumbotron { font-size: 40px; }
 
-.bg-blur {
-  backdrop-filter: blur(25px);
-}
+* { box-sizing: border-box; }
 
-* {
-  box-sizing: border-box;
-}
+a { text-decoration: none; }
 
 body {
   margin: 0;
@@ -98,9 +103,7 @@ body {
   overflow-x: hidden;
 }
 
-hr{
-  border-color: #26ffdf;
-}
+hr { border-color: #26ffdf; }
 
 #app {
   font-family: BFModernista;
@@ -117,9 +120,10 @@ main {
   width: 100vw;
 }
 
-main > div{
+main > div {
   min-height: calc(100vh - 60px);
   width: 100%;
   padding: 20px;
 }
+
 </style>
