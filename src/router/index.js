@@ -4,25 +4,25 @@ import Countdowns from '../views/Countdowns.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/countdowns/'
+    redirect: '/countdowns'
   },
   {
-    path: '/countdowns/',
+    path: '/countdowns',
     name: 'Countdowns',
     component: Countdowns
   },
   {
-    path: '/countdowns/:id/',
+    path: '/countdowns/:id',
     name: 'Countdown',
     component: () => import('../views/Countdown.vue')
   },
   {
-    path: '/requirements/',
+    path: '/requirements',
     name: 'Requirements',
     component: () => import('../views/Requirements.vue')
   },
   {
-    path: '/credits/',
+    path: '/credits',
     name: 'Credits',
     component: () => import('../views/Credits.vue')
   }
