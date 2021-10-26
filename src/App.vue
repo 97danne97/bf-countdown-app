@@ -1,5 +1,5 @@
 <template>
-  <Nav></Nav>
+  <Nav/>
   <main>
     <router-view v-slot="{ Component, route }" el="div">
       <transition :name="route.meta.transitionName">
@@ -12,9 +12,7 @@
 import Nav from '@/components/AppSkeleton/Nav'
 
 export default {
-  components: {
-    Nav
-  },
+  components: { Nav },
   methods: {
     // Countdown and display time remaining
     countDown (event) {
@@ -63,6 +61,7 @@ export default {
 }
 </script>
 <style>
+
 /* Imports */
 @import url('assets/css/animations.css');
 @import url('assets/css/fonts.css');
