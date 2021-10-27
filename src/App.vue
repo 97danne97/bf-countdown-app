@@ -131,7 +131,7 @@ main > div {
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
-  padding: 60px 20px 20px 20px;
+  padding: 60px 20px 60px 20px;
 }
 
 </style>
