@@ -84,7 +84,7 @@ export default {
 #countdown-nav {
   display: flex;
   position: absolute;
-  top: 0;left: 0;
+  top: 60px;left: 0;
   justify-content: space-between;
   width: 100%;
   height: 60px;

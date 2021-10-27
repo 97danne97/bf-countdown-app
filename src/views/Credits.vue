@@ -5,19 +5,20 @@
         <h2>Soundtracks</h2>
         <hr>
         <div class="credits-box">
-          <a class="credit"
+          <a class="credit card"
             v-for="(soundtrack, index) in this.$store.getters.getSoundtracks()"
             :key="index"
             target="_blank"
             :href="`https://www.youtube.com/watch?v=${soundtrack.youtubeId}`">
-            <div class="left">
-              <div class="title-item">{{soundtrack.title}}
-                <!-- <span class="chip" v-if="soundtrack.official"> OST</span> -->
-              </div>
-              <div class="artist-item" v-for="(artist, index) in soundtrack.artists" :key="index">{{artist}}</div>
+            <span class="chip" v-if="soundtrack.official">Official</span>
+            <span class="chip" v-else>Fanmade</span>
+            <div class="title-item">
+              <span>
+                {{soundtrack.title}}
+              </span>
             </div>
-            <div class="right">
-              <i class="yt-icon bi-youtube"></i>
+            <div class="artist-container">
+              <span class="artist-item" v-for="(artist, index) in soundtrack.artists" :key="index">{{artist}}</span>
             </div>
           </a>
         </div>
@@ -48,8 +49,9 @@ export default { data () { return {} } }
 
 .credit {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
   padding: 20px;
   font-family: EABFFont;
   color: white;
@@ -67,17 +69,16 @@ export default { data () { return {} } }
   align-items: center;
 }
 
+.artist-item:not(:last-of-type)::after {
+  content: ', ';
+}
+
+.credit:hover .chip {
+  color: #26ffdf;
+  background-color: #011c26;
+}
+
 .artist-item {
   margin-top: 5px;
-}
-
-.left {
-  flex-grow: 1;
-}
-
-.yt-icon {
-  padding-left: 5px;
-  font-size: 25px;
-  position: relative;
 }
 </style>

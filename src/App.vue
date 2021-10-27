@@ -80,26 +80,28 @@ export default {
 .bg-blur {  backdrop-filter: blur(25px); }
 
 .chip {
-  border-radius: 7px;
+  border-radius: 3px;
   color: #011c26;
-  margin-left: 5px;
-  background-color: white;
-  font-size: 10px;
-  padding: 1px 5px;
+  background-color: #26ffdf;
+  font-size: 11px;
+  flex-grow: 0;
+  padding: 1px 6px;
+  transition: background-color .2s ease, color .2s ease;
+  white-space: nowrap;
 }
 
 h1.jumbotron { font-size: 40px; }
 
 * { box-sizing: border-box; }
 
-a { text-decoration: none; }
+a { text-decoration: none; color: white;}
 
-body {
+body, html {
   margin: 0;
   padding: 0;
   background: url('assets/images/bg.jpg');
   background-attachment: fixed;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 hr { border-color: #26ffdf; }
@@ -109,20 +111,27 @@ hr { border-color: #26ffdf; }
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
+  position: absolute;
+  top: 0;left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 main {
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
-  margin-top: 60px;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
 }
 
 main > div {
-  min-height: calc(100vh - 60px);
+  top: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   width: 100%;
-  padding: 20px;
+  padding: 60px 20px 20px 20px;
 }
 
 </style>

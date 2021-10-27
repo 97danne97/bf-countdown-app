@@ -28,6 +28,6 @@ export default {
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  align-content: flex-start;
+  align-content: center;
 }
 </style>
