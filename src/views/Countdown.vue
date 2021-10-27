@@ -18,9 +18,7 @@
         </transition>
         <transition name="slide-up">
           <div id="countdown-text" v-if="countdown.times">
-            <span v-for="(time, index) in countdown.times" :key="index">{{time}}
-              <span v-if="index + 1 < countdown.times.length"> : </span>
-            </span>
+            <span>{{displayedTime}}</span>
           </div>
         </transition>
       </div>
@@ -29,7 +27,7 @@
       <!-- <AudioPlayer id="bgMusic" ref="audioplayer" @loaded="this.audioLoaded = true" :isActive="this.isActive" :mood="this.countdown.mood"></AudioPlayer> -->
       <transition :name="showPlayer ? 'slide-up' : 'slide-down'">
         <div id="ytplayer-container" v-show="showPlayer&&audioLoaded">
-          <YoutubePlayer id="ytplayer" @loaded="this.audioLoaded = true" ref="ytplayer" :countdown="this.countdown">
+          <YoutubePlayer id="ytplayer" @loaded="audioLoaded = true" ref="ytplayer" :countdown="countdown">
           </YoutubePlayer>
         </div>
       </transition>
@@ -51,22 +49,28 @@ export default {
     }
   },
   computed: {
+    displayedTime () {
+      return `${this.countdown.times[0]} : ${this.countdown.times[1]} : ${this.countdown.times[2]} : ${this.countdown.times[3]}`
+    },
     countdownAnimation () {
       let animation = ''
       switch (this.countdown.mood) {
         case 'launch':
-          animation = 'shake-medium'
+          animation = 'shake-heavy'
           break
         case 'hype':
-          animation = 'shake-light'
+          animation = 'shake-medium'
           break
         case 'calm':
-          animation = 'shake-heavy'
+          animation = 'none'
           break
         default:
           animation = 'shake-heavy'
       }
       return animation
+    },
+    animationSpeed () {
+      return 60 / this.$refs.ytplayer.$data.currentBPM
     },
     countdown () { return this.$store.getters.getEventById(this.$route.params.id) }
   }
