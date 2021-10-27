@@ -25,11 +25,5 @@ export default createStore({
     getEventById: (state) => (id) => {
       return state.events.find(event => event.id === parseInt(id))
     }
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
   }
 })
