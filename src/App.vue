@@ -94,6 +94,14 @@ h1.jumbotron { font-size: 40px; }
 
 * { box-sizing: border-box; }
 
+p {
+  font-family: EABFFont;
+}
+
+p > a {
+  color: #26ffdf;
+}
+
 a { text-decoration: none; color: white;}
 
 body, html {
