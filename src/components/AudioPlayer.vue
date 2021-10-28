@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  props: ['mood', 'isActive'],
+  props: ['countdown'],
   data () {
     return {
       audio: {
@@ -37,27 +37,28 @@ export default {
   },
   computed: {
     savedMood () {
-      return this.$props.mood
+      return this.$props.countdown.mood
     }
   },
   methods: {
     nextTrack () {
-      const index = Math.floor(Math.random() * this.audio.collection[this.savedMood].length)
-      this.audio.player.pause()
-      this.audio.player.src = require(`@/assets/sound/${this.savedMood}/${this.savedMood}${index}.mp3`)
+      let index = Math.floor(Math.random() * this.audio.collection[this.savedMood].length)
+      if (this.audio.player.src === '')
+        this.audio.player.src = require(`@/assets/sound/${this.savedMood}/${this.savedMood}${index}.mp3`)
+      else {
+        this.audio.player.pause()
+        while (this.audio.player.src === require(`@/assets/sound/${this.savedMood}/${this.savedMood}${index}.mp3`)) {
+          index = Math.floor(Math.random() * this.audio.collection[this.savedMood].length)
+          this.audio.player.src = require(`@/assets/sound/${this.savedMood}/${this.savedMood}${index}.mp3`)
+          console.log('Randomized soundtrack same as previous. Finding new...')
+        }
+      }
       this.audio.player.load()
       this.audio.player.play()
       this.audio.currentBPM = this.audio.collection[this.savedMood][index].bpm
     }
   },
   watch: {
-    isActive () {
-      if (this.isActive) {
-        this.audio.player.play()
-      } else {
-        this.audio.player.pause()
-      }
-    },
     savedMood () {
       console.log('changed mood')
       this.nextTrack()
@@ -66,7 +67,6 @@ export default {
   mounted () {
     this.audio.player = document.getElementById('bgMusic')
     this.audio.player.volume = 0.5
-    this.nextTrack()
     this.$emit('loaded')
   }
 }

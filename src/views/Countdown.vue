@@ -24,7 +24,7 @@
       </div>
     </div>
     <div id="player-container">
-      <!-- <AudioPlayer id="bgMusic" ref="audioplayer" @loaded="this.audioLoaded = true" :isActive="this.isActive" :mood="this.countdown.mood"></AudioPlayer> -->
+      <!-- <AudioPlayer id="bgMusic" ref="audioplayer" @loaded="this.audioLoaded = true" :countdown="this.countdown"></AudioPlayer> -->
       <transition :name="showPlayer ? 'slide-up' : 'slide-down'">
         <div id="ytplayer-container" v-show="showPlayer&&audioLoaded">
           <YoutubePlayer id="ytplayer" @loaded="audioLoaded = true" ref="ytplayer" :countdown="countdown">
