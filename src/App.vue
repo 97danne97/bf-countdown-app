@@ -117,7 +117,6 @@ body, html {
   padding: 0;
   background: url('assets/images/bg2.jpg');
   background-position: left;
-  background-color: #000e13;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -128,9 +127,9 @@ hr { border-color: #26ffdf; }
   font-family: BFModernista;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #ffffff;
+  color: white;
   position: absolute;
-  top: 0;left: 0;
+  top: 0; left: 0;
   height: 100%;
   width: 100%;
 }
