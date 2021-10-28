@@ -79,6 +79,10 @@ export default {
 
 .bg-blur {  backdrop-filter: blur(25px); }
 
+.text-accent {
+  color: #26ffdf !important;
+}
+
 .chip {
   border-radius: 3px;
   color: #011c26;
@@ -88,6 +92,10 @@ export default {
   padding: 1px 6px;
   transition: background-color .2s ease, color .2s ease;
   white-space: nowrap;
+}
+
+.no-margin {
+  margin: 0;
 }
 
 h1.jumbotron { font-size: 40px; }
