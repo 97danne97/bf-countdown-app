@@ -80,6 +80,90 @@
     "mood": "hype"
   },
   {
+    "youtubeId": "_Wf-xvX5k2c",
+    "title": "Orbital",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "xS22M8SGAM8",
+    "title": "The Observation of Beautiful Forms",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "fg7YWca1jQ4",
+    "title": "Irreversible",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "TbBzB5umndI",
+    "title": "Between the Bows",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "_QtmIGPScpY",
+    "title": "Wall Jazz",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "xCF-AMJF1jM",
+    "title": "Load Bearing",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "18RxkHgNAGg",
+    "title": "When does a country stop being a country?",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "NpqC2M9bttg",
+    "title": "5 Degrees of Warming",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "M50KuQ7Hmss",
+    "title": "Hauled Over the Coals",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "TEjXNUkCy34",
+    "title": "Wet Bulb",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "nb7dkhJcecE",
+    "title": "Hourglass",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
+    "youtubeId": "cTbq5St2gWQ",
+    "title": "Tipping Points",
+    "artists": ["Hildur Guðnadóttir", "Sam Slater"],
+    "bpm": 119,
+    "official": true
+  },
+  {
     "youtubeId": "FytcxmBT9Ls",
     "title": "Battlefield 2042",
     "artists": ["Hildur Guðnadóttir", "Sam Slater"],
@@ -105,20 +189,6 @@
     "title": "War (Portal Official Trailer Song)",
     "artists": ["IDLES"],
     "bpm": 95,
-    "official": true
-  },
-  {
-    "youtubeId": "oGL0xmMBob4",
-    "title": "Battlefield 4 \"Warsaw\" Theme",
-    "artists": ["Rami"],
-    "bpm": 118,
-    "official": true
-  },
-  {
-    "youtubeId": "dgwNvhHJRrg",
-    "title": "Battlefield 3 Theme",
-    "artists": ["Johan Skugge", "Jukka Rintamäki"],
-    "bpm": 114,
     "official": true
   }
 ]
