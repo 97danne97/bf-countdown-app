@@ -44,7 +44,7 @@ export default {
   font-size: 32px;
 }
 
-@media all and (max-width: 320px) {
+@media all and (max-width: 319px) {
 .event {
   width: 100%;
 }
