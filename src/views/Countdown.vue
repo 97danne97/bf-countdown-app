@@ -18,7 +18,7 @@
         </transition>
         <transition name="slide-up">
           <div id="countdown-text" v-if="countdown.times">
-            <span>{{displayedTime}}</span>
+            <span class="glitch" :data-text="displayedTime">{{displayedTime}}</span>
           </div>
         </transition>
       </div>
