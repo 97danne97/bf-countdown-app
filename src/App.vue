@@ -145,10 +145,9 @@ main {
 main > div {
   top: 0;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   width: 100%;
   padding: 60px 20px 60px 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-
 </style>
