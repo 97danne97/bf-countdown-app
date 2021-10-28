@@ -31,8 +31,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
-  align-items: center;
-  gap: 15px;
+  align-content: flex-start;
+  gap: 20px;
   height: 100%;
   margin: 0 auto;
   padding-top: 20px;
