@@ -2,6 +2,15 @@
     <div class="credits">
       <section class="credits-section">
         <h1 class="jumbotron">Credits</h1>
+        <!-- <p>
+          The soundtracks are legally played through the embedded YouTube player, as stated by the
+          <a href="https://www.youtube.com/static?template=terms" target="_blank">YouTube terms</a>:
+        </p>
+        <p><strong>License to Other Users</strong><br>
+          <q>You also grant each other user of the Service a worldwide, non-exclusive, royalty-free license to access your Content through the Service, and to use that Content, including to reproduce, distribute, prepare derivative works, display, and perform it, only as enabled by a feature of the Service <b>(such as video playback or embeds)</b>.
+            For clarity, this license does not grant any rights or permissions for a user to make use of your Content independent of the Service.
+          </q>
+        </p> -->
         <h2>Soundtracks</h2>
         <hr>
         <div class="credits-box">
