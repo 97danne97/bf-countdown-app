@@ -1,11 +1,15 @@
 <template>
   <div class="countdowns">
-    <CountdownItem
-      v-for="(event, index) in events"
-      :key="index"
-      :event="event"
-    >
-    </CountdownItem>
+    <div class="countdowns-container">
+      <transition-group name="fade" v-show="activeEvents.length > 0">
+        <CountdownItem
+          v-for="(event, index) in activeEvents"
+          :key="index"
+          :event="event"
+        >
+        </CountdownItem>
+      </transition-group>
+    </div>
   </div>
 </template>
 
@@ -14,20 +18,23 @@ import CountdownItem from '../components/CountdownItem'
 
 export default {
   components: { CountdownItem },
-  data () {
-    return {
-      events: this.$store.state.events
+  computed: {
+    activeEvents () {
+      return this.$store.getters.getActiveEvents()
     }
   }
 }
 </script>
 <style scoped>
-.countdowns {
+.countdowns-container {
   user-select: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 </style>
