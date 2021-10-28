@@ -107,7 +107,9 @@ a { text-decoration: none; color: white;}
 body, html {
   margin: 0;
   padding: 0;
-  background: url('assets/images/bg.jpg');
+  background: url('assets/images/bg2.jpg');
+  background-position: left;
+  background-color: #000e13;
   background-attachment: fixed;
   overflow: hidden;
 }
