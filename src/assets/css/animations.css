@@ -217,7 +217,7 @@
 @keyframes glitch-anim-2 {
   2% {
     top: -1px;
-    left: 20%;
+    left: 10%;
     clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
 
   }
@@ -228,7 +228,7 @@
   }
   6% {
     top: -7%;
-    left: 10%;
+    left: 5%;
     clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
   }
   8% {
