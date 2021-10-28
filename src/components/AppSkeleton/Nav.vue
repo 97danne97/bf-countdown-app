@@ -24,7 +24,7 @@ export default {
     return {
       routes: [
         { name: 'Countdowns', route: 'countdowns' },
-        { name: 'Requirements', route: 'requirements' },
+        { name: 'System Requirements', route: 'requirements' },
         { name: 'Credits', route: 'credits' }
       ],
       extended: false
