@@ -1,6 +1,6 @@
 <template>
   <Nav/>
-  <main>
+  <main class="bg-dark">
     <router-view v-slot="{ Component, route }" el="div">
       <transition :name="route.meta.transitionName">
         <component :is="Component" />
