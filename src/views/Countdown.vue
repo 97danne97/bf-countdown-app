@@ -24,7 +24,6 @@
       </div>
     </div>
     <div id="player-container">
-      <!-- <AudioPlayer id="bgMusic" ref="audioplayer" @loaded="this.audioLoaded = true" :countdown="this.countdown"></AudioPlayer> -->
       <transition :name="showPlayer ? 'slide-up' : 'slide-down'">
         <div id="ytplayer-container" v-show="showPlayer&&audioLoaded">
           <YoutubePlayer id="ytplayer" @loaded="audioLoaded = true" ref="ytplayer" :countdown="countdown">
@@ -37,10 +36,8 @@
 
 <script>
 import YoutubePlayer from '@/components/YoutubePlayer'
-import AudioPlayer from '@/components/AudioPlayer'
 export default {
-  // eslint-disable-next-line vue/no-unused-components
-  components: { AudioPlayer, YoutubePlayer },
+  components: { YoutubePlayer },
   name: 'Countdown',
   data () {
     return {
