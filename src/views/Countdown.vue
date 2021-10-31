@@ -1,6 +1,6 @@
 <template>
   <div id="countdown" class="bg-dark">
-    <div id="countdown-nav">
+    <section id="countdown-nav">
       <router-link tag="div" class="countdown-btn" to="/countdowns"><i class="bi-arrow-left"></i></router-link>
       <transition name="slide-left">
         <div class="countdown-btn" @click="showPlayer = !showPlayer" v-show="audioLoaded">
@@ -10,9 +10,8 @@
           </transition>
         </div>
       </transition>
-    </div>
-    <div id="countdown-container">
-      <div id="countdown-card" :style="`animation-name: ${this.countdownAnimation};`">
+    </section>
+    <section id="countdown-container" :style="`animation-name: ${this.countdownAnimation};`">
         <transition name="slide-down">
           <div id="countdown-title" v-if="countdown.times">{{countdown.name}}</div>
         </transition>
@@ -21,16 +20,15 @@
             <span class="glitch" :data-text="displayedTime">{{displayedTime}}</span>
           </div>
         </transition>
-      </div>
-    </div>
-    <div id="player-container">
+    </section>
+    <section id="player-container">
       <transition :name="showPlayer ? 'slide-up' : 'slide-down'">
         <div id="ytplayer-container" v-show="showPlayer&&audioLoaded">
           <YoutubePlayer id="ytplayer" @loaded="audioLoaded = true" ref="ytplayer" :countdown="countdown">
           </YoutubePlayer>
         </div>
       </transition>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -106,12 +104,8 @@ export default {
 }
 
 #countdown-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#countdown-card {
+  text-align: center;
+  /* Shake on beat */
   animation-direction: forwards;
   animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation-iteration-count: infinite;
@@ -119,7 +113,6 @@ export default {
 
 #countdown-title {
   font-size: 20px;
-  text-align: center;
 }
 
 #countdown-text {
