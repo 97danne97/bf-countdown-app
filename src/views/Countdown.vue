@@ -46,9 +46,7 @@ export default {
     }
   },
   computed: {
-    displayedTime () {
-      return `${this.countdown.times[0]} : ${this.countdown.times[1]} : ${this.countdown.times[2]} : ${this.countdown.times[3]}`
-    },
+    displayedTime () { return `${this.countdown.times[0]} : ${this.countdown.times[1]} : ${this.countdown.times[2]} : ${this.countdown.times[3]}` },
     countdownAnimation () {
       let animation = ''
       switch (this.countdown.mood) {
@@ -66,9 +64,7 @@ export default {
       }
       return animation
     },
-    animationSpeed () {
-      return 60 / this.$refs.ytplayer.$data.currentBPM
-    },
+    animationSpeed () { return 60 / this.$refs.ytplayer.$data.currentBPM },
     countdown () { return this.$store.getters.getEventById(this.$route.params.id) }
   }
 }
