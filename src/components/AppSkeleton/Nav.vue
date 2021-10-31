@@ -1,7 +1,7 @@
 <template>
   <nav :class="{ extended: extended }">
     <header class="bg-dark bg-blur">
-      <div class="nav-toggle" @click="extended = !extended">
+      <div class="nav-toggle" @click="toggleExtended">
         <transition name=fade>
           <i v-if="!extended" class="bi-list"></i>
           <i v-else class="bi-x"></i>
@@ -9,11 +9,13 @@
       </div>
       <img src="@/assets/images/bf-2042-teal-nav-logo.svg" alt="logo">
     </header>
-    <div id="nav-extended" class="bg-dark bg-blur">
-      <div id="link-group">
-        <router-link v-for="route in routes" :key="route.name" @click="toggleExtended" :to="`/${route.route}`">{{route.name}}</router-link>
+    <transition name="slide-full-toggle-up">
+      <div v-show="extended" id="nav-extended" class="bg-dark bg-blur">
+        <div id="link-group">
+          <router-link v-for="route in routes" :key="route.name" @click="toggleExtended" :to="`/${route.route}`">{{route.name}}</router-link>
+        </div>
       </div>
-    </div>
+    </transition>
   </nav>
 </template>
 
@@ -53,7 +55,7 @@ nav header {
 
 nav .nav-toggle {
   position: absolute;
-  left: 0;top: 0;
+  left: 0; top: 0;
   height: 100%;
   text-align: center;
   width: 60px;
@@ -69,37 +71,21 @@ nav .nav-toggle:hover {
 
 nav #nav-extended {
   position: absolute;
-  visibility: hidden;
-  transform: translateY(100%);
-  transition: .3s cubic-bezier(0.89, 0.375, 0.365, 1);
+  height: calc(100vh);
+  padding: 20px;
   width: 100%;
   z-index: -1;
-  border-top: 2px solid transparent;
-}
-
-nav.extended #nav-extended{
-  transition: .3s cubic-bezier(0.1, .5, 0.12, 1);
-  visibility: visible;
-  transform: none;
-  border-color: #26FFD6;
-}
-
-nav #nav-extended #link-group{
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  padding: 0 20px;
-  margin-top: 20px;
-  height: calc(100vh);
+  border-top: 2px solid #26FFD6;
 }
 
 nav #nav-extended #link-group a {
-  font-weight: bold;
-  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #bbbbbb;
-  padding: 10px 7px;
+  padding: 8px 0;
   font-size: 30px;
-  line-height: 30px;
   transition: color .2s;
 }
 
