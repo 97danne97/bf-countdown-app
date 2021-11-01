@@ -2,12 +2,7 @@
   <div class="countdowns">
     <div class="countdowns-container">
       <transition-group name="fade" v-show="activeEvents.length > 0">
-        <CountdownItem
-          v-for="(event, index) in activeEvents"
-          :key="index"
-          :event="event"
-        >
-        </CountdownItem>
+        <CountdownItem v-for="(event, index) in activeEvents" :key="index" :event="event"></CountdownItem>
       </transition-group>
     </div>
   </div>

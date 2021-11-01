@@ -127,14 +127,16 @@ export default {
   justify-content: center;
   width: 100%;
   height: 144px;
-  bottom: 20px;left: 0;
+  bottom: 20px;
+  left: 0;
   overflow: hidden;
 }
 
 #ytplayer-container {
   position: absolute;
   bottom: 0;
-  height: 144px; width: 250px;
+  height: 144px;
+  width: 250px;
   max-width: 100%;
 }
 

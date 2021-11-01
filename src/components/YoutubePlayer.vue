@@ -17,12 +17,8 @@ export default {
     }
   },
   computed: {
-    savedMood () {
-      return this.countdown.mood
-    },
-    soundtracks () {
-      return this.$store.getters.getSoundtracks()
-    }
+    savedMood () { return this.countdown.mood },
+    soundtracks () { return this.$store.getters.getSoundtracks() }
   },
   methods: {
     nextTrack () {
@@ -67,17 +63,14 @@ export default {
     },
     onPlayerStateChange (evt) {
       console.log('Player state changed', evt)
-      if (evt.data === 0) {
+      if (evt.data === 0)
         this.nextTrack()
-      }
     },
     playerDestroy () {
-      if (document.getElementById('ytscript')) {
+      if (document.getElementById('ytscript'))
         document.getElementById('ytscript').remove()
-      }
-      if (document.getElementById('www-widgetapi-script')) {
+      if (document.getElementById('www-widgetapi-script'))
         document.getElementById('www-widgetapi-script').remove()
-      }
       this.player.destroy()
       document.querySelector('html').dispatchEvent(new CustomEvent('YouTubeIframeAPIReady'))
       window.YT = undefined

@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import RequirementsCard from '@/components/RequirementsCard.vue'
 
 export default {
