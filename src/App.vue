@@ -62,31 +62,34 @@ export default {
 </script>
 <style>
 
-/* Imports */
+/* --- Imports --- */
+
 @import url('assets/css/animations.css');
 @import url('assets/css/fonts.css');
 
-::-webkit-scrollbar{
-  display: block;
-  width: 3px;
-  height: 3px;
-  background-color: #011c26;
+/* --- Variables --- */
+
+:root{
+  --darkest: #011C26;
+  --darker: #025159;
+  --dark: #08A696;
+  --accent: #26FFDF;
+  --red: #FF2C10;
+  --orange: #F26A1B;
 }
 
-::-webkit-scrollbar-thumb{ background-color: #26ffdf; }
+/* --- Class styling --- */
 
-.bg-dark { background-color: rgba(0, 0, 0, 0.486); }
+.bg-dark { background-color: rgba(0, 0, 0, 0.5); }
 
 .bg-blur {  backdrop-filter: blur(25px); }
 
-.text-accent {
-  color: #26ffdf !important;
-}
+.text-accent { color: var(--accent) !important; }
 
 .chip {
   border-radius: 3px;
-  color: #011c26;
-  background-color: #26ffdf;
+  color: var(--darkest);
+  background-color: var(--accent);
   font-size: 11px;
   flex-grow: 0;
   padding: 1px 6px;
@@ -94,21 +97,26 @@ export default {
   white-space: nowrap;
 }
 
-.no-margin {
-  margin: 0;
-}
+.no-margin { margin: 0; }
 
 h1.jumbotron { font-size: 40px; }
 
+/* --- Global styles --- */
+
+::-webkit-scrollbar{
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: var(--darkest);
+}
+
+::-webkit-scrollbar-thumb{ background-color: var(--accent); }
+
 * { box-sizing: border-box; }
 
-p {
-  font-family: EABFFont;
-}
+p { font-family: EABFFont; }
 
-p > a {
-  color: #26ffdf;
-}
+p > a { color: var(--accent); }
 
 a { text-decoration: none; color: white;}
 
@@ -121,7 +129,7 @@ body, html {
   overflow: hidden;
 }
 
-hr { border-color: #26ffdf; }
+hr { border-color: var(--accent); }
 
 #app {
   font-family: BFModernista;

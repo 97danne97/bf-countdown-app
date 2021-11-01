@@ -68,8 +68,8 @@ export default { data () { return {} } }
 }
 
 .credit:hover {
-  color: #011c26;
-  background-color: #26ffdf;
+  color: var(--darkest);
+  background-color: var(--accent);
 }
 
 .title-item {
@@ -83,8 +83,8 @@ export default { data () { return {} } }
 }
 
 .credit:hover .chip {
-  color: #26ffdf;
-  background-color: #011c26;
+  color: var(--accent);
+  background-color: var(--darkest);
 }
 
 .artist-item {

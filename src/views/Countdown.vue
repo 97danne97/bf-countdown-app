@@ -93,10 +93,10 @@ export default {
   line-height: 55px;
   font-size: 25px;
   cursor: pointer;
-  color: rgb(161, 161, 161);
+  color: gray;
 }
 .countdown-btn:hover {
-  color: #26FFD6;
+  color: var(--accent);
 }
 
 #countdown-nav > .countdown-btn {
@@ -117,8 +117,8 @@ export default {
 
 #countdown-text {
   font-size: 12vw;
-  text-shadow: 0 0 5px #26FFD6;
-  color: #26FFD6;
+  text-shadow: 0 0 5px var(--accent);
+  color: var(--accent);
 }
 
 #player-container{

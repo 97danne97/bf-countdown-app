@@ -66,7 +66,7 @@ nav .nav-toggle {
   transition: color .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 nav .nav-toggle:hover {
-  color: #26FFD6;
+  color: var(--accent);
 }
 
 nav #nav-extended {
@@ -75,7 +75,7 @@ nav #nav-extended {
   padding: 20px;
   width: 100%;
   z-index: -1;
-  border-top: 2px solid #26FFD6;
+  border-top: 2px solid var(--accent);
 }
 
 nav #nav-extended #link-group a {
@@ -83,7 +83,7 @@ nav #nav-extended #link-group a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #bbbbbb;
+  color: grey;
   padding: 8px 0;
   font-size: 30px;
   transition: color .2s;
@@ -91,7 +91,7 @@ nav #nav-extended #link-group a {
 
 nav #nav-extended #link-group a.router-link-exact-active,
 nav #nav-extended #link-group a:hover {
-  color: #26FFD6;
-  text-shadow: 0 0 5px #26FFD6;
+  color: var(--accent);
+  text-shadow: 0 0 5px var(--accent);
 }
 </style>
