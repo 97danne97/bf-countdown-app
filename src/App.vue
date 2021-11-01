@@ -123,7 +123,7 @@ a { text-decoration: none; color: white;}
 body, html {
   margin: 0;
   padding: 0;
-  background: url('assets/images/bg2.jpg');
+  background: url('assets/images/bg.jpg');
   background-position: left;
   background-attachment: fixed;
   overflow: hidden;
