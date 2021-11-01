@@ -150,46 +150,6 @@
 
 /* ---- KEYFRAMES ---- */
 
-@keyframes shake-heavy {
-  0% { transform: translate(1px, 1px); }
-  10% { transform: translate(-1px, -2px); }
-  20% { transform: translate(-2px, 0px) rotate(1deg); }
-  30% { transform: translate(2px, 2px) rotate(0deg);}
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) scale(1.02); filter: blur(2px);}
-  60% { transform: translate(-2px, 1px); }
-  70% { transform: translate(2px, 1px); }
-  80% { transform: translate(-1px, -1px); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg) scale(1.02); }
-}
-@keyframes shake-medium {
-  0% { transform: translate(1px, 1px); }
-  10% { transform: translate(-1px, -2px); }
-  20% { transform: translate(-2px, 0px)}
-  30% { transform: translate(2px, 2px)}
-  40% { transform: translate(1px, -1px)}
-  50% { transform: translate(-1px, 2px); filter: blur(2px);}
-  60% { transform: translate(-2px, 1px); }
-  70% { transform: translate(2px, 1px); }
-  80% { transform: translate(-1px, -1px); }
-  90% { transform: translate(1px, 2px)}
-  100% { transform: translate(1px, -2px)}
-}
-@keyframes shake-light {
-  0% { transform: translate(1px, 1px); filter: blur(1px);}
-  10% { transform: translate(-0px, -1px); }
-  20% { transform: translate(-1px, 0px); filter: blur(1px);}
-  30% { transform: translate(0px, 1px); }
-  40% { transform: translate(1px, -1px)}
-  50% { transform: translate(-1px, 0px);}
-  60% { transform: translate(-1px, 1px); }
-  70% { transform: translate(0px, 1px);  filter: blur(1px);}
-  80% { transform: translate(-1px, -1px); }
-  90% { transform: translate(1px, 0px)}
-  100% { transform: translate(0px, -1px)}
-}
-
 .glitch {
   position: relative;
   color: #00ffc8;

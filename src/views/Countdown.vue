@@ -11,7 +11,7 @@
         </div>
       </transition>
     </section>
-    <section id="countdown-container" :style="`animation-name: ${this.countdownAnimation};`">
+    <section id="countdown-container">
         <transition name="slide-down">
           <div id="countdown-title" v-if="countdown.times">{{countdown.name}}</div>
         </transition>
@@ -45,24 +45,6 @@ export default {
   },
   computed: {
     displayedTime () { return `${this.countdown.times[0]} : ${this.countdown.times[1]} : ${this.countdown.times[2]} : ${this.countdown.times[3]}` },
-    countdownAnimation () {
-      let animation = ''
-      switch (this.countdown.mood) {
-        case 'launch':
-          animation = 'shake-heavy'
-          break
-        case 'hype':
-          animation = 'shake-medium'
-          break
-        case 'calm':
-          animation = 'none'
-          break
-        default:
-          animation = 'shake-heavy'
-      }
-      return animation
-    },
-    animationSpeed () { return 60 / this.$refs.ytplayer.$data.currentBPM },
     countdown () { return this.$store.getters.getEventById(this.$route.params.id) }
   }
 }
@@ -105,10 +87,6 @@ export default {
 
 #countdown-container {
   text-align: center;
-  /* Shake on beat */
-  animation-direction: forwards;
-  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  animation-iteration-count: infinite;
 }
 
 #countdown-title {
