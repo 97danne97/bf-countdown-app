@@ -76,6 +76,7 @@ export default {
   font-size: 25px;
   cursor: pointer;
   color: gray;
+  transition: color .2s ease;
 }
 .countdown-btn:hover {
   color: var(--accent);
