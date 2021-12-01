@@ -8,8 +8,13 @@ export default createStore({
     events: events
   },
   getters: {
-    getActiveEvents: (state) => () => {
-      return state.events.filter(event => event.distance >= 0)
+    getEvents: (state) => (active) => {
+      if (active === 'upcoming')
+        return state.events.filter(event => event.distance >= 0)
+      else if (active === 'passed')
+        return state.events.filter(event => event.distance < 0)
+      else
+        return state.events
     },
     getSoundTrackByMood: (state) => (mood) => {
       return state.soundtracks.filter(soundtrack => soundtrack.mood === mood)

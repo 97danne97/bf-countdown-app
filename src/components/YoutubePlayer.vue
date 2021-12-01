@@ -22,15 +22,18 @@ export default {
   },
   methods: {
     nextTrack () {
-      let index = Math.floor(Math.random() * this.soundtracks.length)
+      let index = this.generateRandomIndex(this.soundtracks.length)
       while (this.player.playerInfo.videoData.video_id === this.soundtracks[index].youtubeId) {
-        index = Math.floor(Math.random() * this.soundtracks.length)
+        index = this.generateRandomIndex(this.soundtracks.length)
         console.log('Randomized soundtrack same as previous. Finding new...')
       }
       this.player.loadVideoById(this.soundtracks[index].youtubeId)
       this.player.playVideo()
       console.log(`Playing: ${this.soundtracks[index].youtubeId}`)
       this.currentBPM = this.soundtracks[index].bpm
+    },
+    generateRandomIndex (listSize) {
+      return Math.floor(Math.random() * listSize)
     },
     createYouTubeIframe () {
       var tag = document.createElement('script')

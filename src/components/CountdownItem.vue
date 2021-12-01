@@ -2,13 +2,16 @@
   <transition name="fade">
     <div @click="$router.push(`/countdowns/${event.id}`)" class="event" v-if="event.times">
       <h1>{{event.name}}</h1>
-      <div class="countdown">
+      <div v-if="event.distance > 0" class="countdown">
         <span v-for="(time, index) in event.times" :key="index">
           <span class="countdown-time-unit">
             {{time}}
             <span class="countdown-time-unit-separator" v-if="index + 1 < event.times.length"> : </span>
           </span>
         </span>
+      </div>
+      <div v-else class="countdown">
+        <span>LAUNCHED</span>
       </div>
     </div>
   </transition>

@@ -1,5 +1,5 @@
 <template>
-  <div id="countdown" class="bg-dark">
+  <div id="countdown" class="bg-dark bg-blur">
     <section id="countdown-nav">
       <router-link tag="div" class="countdown-btn" to="/countdowns"><i class="bi-arrow-left"></i></router-link>
       <transition name="slide-left">
