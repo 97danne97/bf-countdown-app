@@ -1,6 +1,6 @@
 <template>
   <div class="countdowns">
-      <transition-group name="list-complete" v-show="activeEvents.length > 0" class="countdowns-container" tag="div">
+      <transition-group name="list-complete" v-show="activeEvents.length + passedEvents.length > 0" class="countdowns-container" tag="div">
         <CountdownItem v-for="(event, index) in activeEvents" :key="index" :event="event"></CountdownItem>
         <CountdownItem v-for="(event, index) in passedEvents" :key="index" :event="event"></CountdownItem>
       </transition-group>
