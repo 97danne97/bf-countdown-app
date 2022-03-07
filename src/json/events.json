@@ -18,5 +18,10 @@
     "id": 3,
     "name": "Update #3",
     "date": "Dec 02, 2021 08:00:00 GMT+1"
+  },
+  {
+    "id": 4,
+    "name": "Update 3.3",
+    "date": "Mar 08, 2022 08:00:00 GMT+1"
   }
 ]
